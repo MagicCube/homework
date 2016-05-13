@@ -1,0 +1,23 @@
+@screen-width:1920px;
+@screen-height:1080px;
+@grid-rows:12;
+@grid-columns:16;
+
+.grid-loop-row-mixin (@counter) when (@counter > 0){
+  .grid > .row-@{counter} {
+    position:absolute;
+    top:(@screen-height / @grid-rows)*(@grid-rows - @counter);
+  }
+  .grid-loop-row-mixin(@counter - 1);
+}
+
+.grid-loop-col-mixin (@counter) when (@counter > 0){
+  .grid > .col-@{counter} {
+    position:absolute;
+    left:(@screen-width / @grid-columns)*(@grid-columns - @counter);
+  }
+  .grid-loop-col-mixin(@counter - 1);
+}
+
+.grid-loop-row-mixin(@grid-rows);
+.grid-loop-col-mixin(@grid-columns);
