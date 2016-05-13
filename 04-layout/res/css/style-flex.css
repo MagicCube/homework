@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+body {
+  font-size: 14px;
+}
+.app {
+  height: 100%;
+  display: flex;
+}
+.app > .app-left {
+  background-color: grey;
+  flex: 0 0 300px;
+}
+.app > .app-middle {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.app > .app-middle > header {
+  background-color: #0767b8;
+  flex: 0 0 50px;
+}
+.app > .app-middle > .container {
+  background-color: orange;
+  flex: 1 0 auto;
+  display: flex;
+}
+.app > .app-middle > .container > nav {
+  background-color: red;
+  flex: 0 0 300px;
+}
+.app > .app-middle > .container > main {
+  background-color: yellow;
+  flex: 1 0 auto;
+}
+.app > .app-middle > footer {
+  background-color: green;
+  flex: 0 0 50px;
+}
+.app > .app-right {
+  background-color: pink;
+  flex: 0 0 400px;
+}
