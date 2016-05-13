@@ -1,0 +1,112 @@
+.grid > .row-1 {
+  position: absolute;
+  top: 0;
+}
+.grid > .row-2 {
+  position: absolute;
+  top: 90;
+}
+.grid > .row-3 {
+  position: absolute;
+  top: 180;
+}
+.grid > .row-4 {
+  position: absolute;
+  top: 270;
+}
+.grid > .row-5 {
+  position: absolute;
+  top: 360;
+}
+.grid > .row-6 {
+  position: absolute;
+  top: 450;
+}
+.grid > .row-7 {
+  position: absolute;
+  top: 540;
+}
+.grid > .row-8 {
+  position: absolute;
+  top: 630;
+}
+.grid > .row-9 {
+  position: absolute;
+  top: 720;
+}
+.grid > .row-10 {
+  position: absolute;
+  top: 810;
+}
+.grid > .row-11 {
+  position: absolute;
+  top: 900;
+}
+.grid > .row-12 {
+  position: absolute;
+  top: 990;
+}
+.grid > .column-1 {
+  position: absolute;
+  top: 0;
+}
+.grid > .column-2 {
+  position: absolute;
+  top: 120;
+}
+.grid > .column-3 {
+  position: absolute;
+  top: 240;
+}
+.grid > .column-4 {
+  position: absolute;
+  top: 360;
+}
+.grid > .column-5 {
+  position: absolute;
+  top: 480;
+}
+.grid > .column-6 {
+  position: absolute;
+  top: 600;
+}
+.grid > .column-7 {
+  position: absolute;
+  top: 720;
+}
+.grid > .column-8 {
+  position: absolute;
+  top: 840;
+}
+.grid > .column-9 {
+  position: absolute;
+  top: 960;
+}
+.grid > .column-10 {
+  position: absolute;
+  top: 1080;
+}
+.grid > .column-11 {
+  position: absolute;
+  top: 1200;
+}
+.grid > .column-12 {
+  position: absolute;
+  top: 1320;
+}
+.grid > .column-13 {
+  position: absolute;
+  top: 1440;
+}
+.grid > .column-14 {
+  position: absolute;
+  top: 1560;
+}
+.grid > .column-15 {
+  position: absolute;
+  top: 1680;
+}
+.grid > .column-16 {
+  position: absolute;
+  top: 1800;
+}
