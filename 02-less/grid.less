@@ -1,0 +1,27 @@
+@screen-width: 1920px;
+@screen-height: 1080px;
+@grid-rows: 12;
+@grid-columns: 16;
+
+.loop-rows-loop-mixin(@counter, @amount) when (@counter > 0)
+{
+    .loop-rows-loop-mixin(@counter - 1, @amount);
+    .grid > .row-@{counter}
+    {
+        position: absolute;
+        top: (@screen-height / @grid-rows) * (@counter - 1);
+    }
+}
+
+.loop-cols-loop-mixin(@counter, @amount) when (@counter > 0)
+{
+    .loop-cols-loop-mixin(@counter - 1, @amount);
+    .grid > .col-@{counter}
+    {
+        position: absolute;
+        left: (@screen-height / @grid-rows) * (@counter - 1);
+    }
+}
+
+.loop-rows-loop-mixin(@grid-rows, @grid-rows);
+.loop-cols-loop-mixin(@grid-columns, @grid-columns);
