@@ -1,0 +1,27 @@
+@screen-width: 1920px;
+@screen-height: 1080px;
+@grid-rows: 12;
+@grid-columns: 16;
+
+
+.col-loop(@col-counter) when (@col-counter < (@grid-columns + 1)) {
+    .col-@{col-counter} {
+        position: absolute;
+        left: @screen-width / @grid-columns * (@col-counter - 1);
+    }
+
+    .col-loop(@col-counter + 1);
+}
+
+.col-loop(1);
+
+.row-loop(@row-counter) when (@row-counter < (@grid-rows + 1)) {
+    .row-@{row-counter} {
+        position: absolute;
+        left: @screen-width / @grid-rows * (@row-counter - 1);
+    }
+
+    .row-loop(@row-counter + 1);
+}
+
+.row-loop(1);
