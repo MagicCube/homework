@@ -48,65 +48,65 @@
 }
 .grid > .column-1 {
   position: absolute;
-  top: 0;
+  left: 0;
 }
 .grid > .column-2 {
   position: absolute;
-  top: 120;
+  left: 120;
 }
 .grid > .column-3 {
   position: absolute;
-  top: 240;
+  left: 240;
 }
 .grid > .column-4 {
   position: absolute;
-  top: 360;
+  left: 360;
 }
 .grid > .column-5 {
   position: absolute;
-  top: 480;
+  left: 480;
 }
 .grid > .column-6 {
   position: absolute;
-  top: 600;
+  left: 600;
 }
 .grid > .column-7 {
   position: absolute;
-  top: 720;
+  left: 720;
 }
 .grid > .column-8 {
   position: absolute;
-  top: 840;
+  left: 840;
 }
 .grid > .column-9 {
   position: absolute;
-  top: 960;
+  left: 960;
 }
 .grid > .column-10 {
   position: absolute;
-  top: 1080;
+  left: 1080;
 }
 .grid > .column-11 {
   position: absolute;
-  top: 1200;
+  left: 1200;
 }
 .grid > .column-12 {
   position: absolute;
-  top: 1320;
+  left: 1320;
 }
 .grid > .column-13 {
   position: absolute;
-  top: 1440;
+  left: 1440;
 }
 .grid > .column-14 {
   position: absolute;
-  top: 1560;
+  left: 1560;
 }
 .grid > .column-15 {
   position: absolute;
-  top: 1680;
+  left: 1680;
 }
 .grid > .column-16 {
   position: absolute;
-  top: 1800;
+  left: 1800;
 }

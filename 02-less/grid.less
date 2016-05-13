@@ -14,7 +14,7 @@
 .grid-columns-loop-mixin(@count) when (@count < @grid-columns + 1) {
     .grid > .column-@{count} {
         position: absolute;
-        top: (@screen-width / @grid-columns) * (@count - 1);
+        left: (@screen-width / @grid-columns) * (@count - 1);
     }
     .grid-columns-loop-mixin(@count + 1);
 }
