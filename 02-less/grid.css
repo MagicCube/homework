@@ -52,61 +52,61 @@
 }
 .grid > .col-2 {
   position: absolute;
-  left: 90px;
+  left: 120px;
 }
 .grid > .col-3 {
   position: absolute;
-  left: 180px;
+  left: 240px;
 }
 .grid > .col-4 {
   position: absolute;
-  left: 270px;
+  left: 360px;
 }
 .grid > .col-5 {
   position: absolute;
-  left: 360px;
+  left: 480px;
 }
 .grid > .col-6 {
   position: absolute;
-  left: 450px;
+  left: 600px;
 }
 .grid > .col-7 {
   position: absolute;
-  left: 540px;
+  left: 720px;
 }
 .grid > .col-8 {
   position: absolute;
-  left: 630px;
+  left: 840px;
 }
 .grid > .col-9 {
   position: absolute;
-  left: 720px;
+  left: 960px;
 }
 .grid > .col-10 {
   position: absolute;
-  left: 810px;
+  left: 1080px;
 }
 .grid > .col-11 {
   position: absolute;
-  left: 900px;
+  left: 1200px;
 }
 .grid > .col-12 {
   position: absolute;
-  left: 990px;
+  left: 1320px;
 }
 .grid > .col-13 {
   position: absolute;
-  left: 1080px;
+  left: 1440px;
 }
 .grid > .col-14 {
   position: absolute;
-  left: 1170px;
+  left: 1560px;
 }
 .grid > .col-15 {
   position: absolute;
-  left: 1260px;
+  left: 1680px;
 }
 .grid > .col-16 {
   position: absolute;
-  left: 1350px;
+  left: 1800px;
 }
