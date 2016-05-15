@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+body {
+  font-size: 14px;
+}
+.app {
+  height: 100%;
+  display: flex;
+}
+.app > aside.left {
+  flex: 0 0 300px;
+  background: yellow;
+}
+.app > aside.right {
+  flex: 0 0 400px;
+  background: yellow;
+}
+.app > .container {
+  height: 100%;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.app > .container > header {
+  flex: 0 0 50px;
+  background: blue;
+}
+.app > .container > .container2 {
+  flex: 1 0 auto;
+  display: flex;
+}
+.app > .container > .container2 > aside.middle {
+  flex: 0 0 300px;
+  background: orange;
+}
+.app > .container > .container2 > main {
+  flex: 1 0 auto;
+  background: gray;
+}
+.app > .container > footer {
+  flex: 0 0 50px;
+  background: black;
+}
