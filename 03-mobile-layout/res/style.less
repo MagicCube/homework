@@ -1,0 +1,73 @@
+body,
+html {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    //background: red;
+}
+.app {
+    @screen-width: 375px;
+    @screen-height: 667px;
+    @header-height: 64px;
+    @footer-height: 48px;
+    @span-width: 32px;
+    @span-height: 32px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-flow: column;
+    > header {
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+        background: pink;
+        flex: 0 0 @header-height;
+    }
+    > .main {
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+        background: yellow;
+        flex: 1 1 auto;
+    }
+    > footer {
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+        //background: pink;
+        height: @footer-height;
+        flex: 0 0 @footer-height;
+        > ul {
+            padding: 0;
+            margin: 0;
+            height: @footer-height;
+            //background: green;
+            display: flex;
+            > li {
+                flex: 1 1 auto;
+                list-style: none;
+                background-color: green;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                &:nth-child(even) {
+                    background: red;
+                }
+                &:nth-child(even) > span {
+                    background: pink;
+                }
+                > span {
+                    display: block;
+                    width: @span-width;
+                    height: @span-height;
+                    padding: 0;
+                    background: white;
+                }
+            }
+        }
+    }
+}
