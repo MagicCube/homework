@@ -1,0 +1,75 @@
+# homework-03 mobile-layout
+
+##### style.less
+
+```css
+html, body
+{
+    widows: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+*
+{
+    box-sizing: border-box;
+}
+
+body
+{
+    font-size: 14px;
+}
+
+@header-height: 64px;
+@footer-height: 48px;
+@icon-size: 32px;
+
+.app
+{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    > header
+    {
+        background: blue;
+        height: @header-height;
+    }
+
+    > .container
+    {
+        background: cyan;
+        flex: 1;
+    }
+
+    > ul
+    {
+        padding: 0;
+        margin: 0;
+        height: @footer-height;
+        display: flex;
+
+        > li {
+            background: blue;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+
+            > span
+            {
+                background: cyan;
+                width: @icon-size;
+                height: @icon-size;
+            }
+        }
+    }
+}
+
+```
+
+##### 截图
+
+![screenshot](./screenshot/iphone.png)
