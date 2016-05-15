@@ -1,0 +1,55 @@
+html, body
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+.app{
+    @left-width:300px;
+    @right-width:400px;
+    @header-height:50px;
+    @footer-height:50px;
+    @mid-left-width:300px;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background: red;
+    > .left{
+        flex:0 0 @left-width;
+        background: pink;
+    }
+    > .container{
+        flex:1 1 auto;
+        display: flex;
+        flex-flow: column;
+        > header{
+            flex:0 0 @header-height;
+            background: green;
+        }
+        > .mid{
+            flex:1 1 auto;
+            display:flex;
+            > .mid-left{
+                flex:0 0 @mid-left-width;
+                background: yellow;
+            }
+            > .content{
+                flex:1 1 auto;
+                background: blue;
+            }
+        }
+        > footer{
+            flex:0 0 @footer-height;
+            background: green;
+        }
+    }
+    > .right{
+        flex:0 0 @right-width;
+        background: pink;
+    }
+}

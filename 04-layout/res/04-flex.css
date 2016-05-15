@@ -1,0 +1,49 @@
+html,
+body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.app {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background: red;
+}
+.app > .left {
+  flex: 0 0 300px;
+  background: pink;
+}
+.app > .container {
+  flex: 1 1 auto;
+  display: flex;
+  flex-flow: column;
+}
+.app > .container > header {
+  flex: 0 0 50px;
+  background: green;
+}
+.app > .container > .mid {
+  flex: 1 1 auto;
+  display: flex;
+}
+.app > .container > .mid > .mid-left {
+  flex: 0 0 300px;
+  background: yellow;
+}
+.app > .container > .mid > .content {
+  flex: 1 1 auto;
+  background: blue;
+}
+.app > .container > footer {
+  flex: 0 0 50px;
+  background: green;
+}
+.app > .right {
+  flex: 0 0 400px;
+  background: pink;
+}

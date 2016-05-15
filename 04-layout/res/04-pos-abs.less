@@ -1,0 +1,85 @@
+html, body
+{
+    @screen-width:1920px;
+    @screen-height:1080px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+.app{
+    @left-width:300px;
+    @right-width:400px;
+    @header-height:50px;
+    @footer-height:50px;
+    @mid-left-width:300px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    > .left{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: @left-width;
+        background: green;
+    }
+    > .container{
+        position: absolute;
+        top: 0;
+        left: @left-width;
+        right: @right-width;
+        height: 100%;
+        > header{
+            position: absolute;
+            top:0;
+            width: 100%;
+            height: @header-height;
+            background: pink;
+        }
+        > .mid{
+            position: absolute;
+            top:@header-height;
+            right: 0;
+            left: 0;
+            bottom: @footer-height;
+            > .mid-left{
+                position: absolute;
+                left:0;
+                top:0;
+                bottom: 0;
+                width: @mid-left-width;
+                height: 100%;
+                background: blue;
+            }
+            > .content{
+                position: absolute;
+                left:@mid-left-width;
+                right: 0px;
+                top: 0;
+                bottom: 0;
+                height: 100%;
+                background: yellow;
+            }
+        }
+        > footer{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: @footer-height;
+            background: pink;
+        }
+    }
+    > .right{
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: @right-width;
+        background: green;
+    }
+}
