@@ -1,8 +1,0 @@
-const express = require("express");
-const app = express();
-
-app.use(express.static("./public"));
-
-app.listen(8080, () => {
-    console.log("The server is now running in http://localhost:8080 ...");
-});
