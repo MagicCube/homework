@@ -1,0 +1,22 @@
+{
+  "name": "homework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MagicCube/homework.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MagicCube/homework/issues"
+  },
+  "homepage": "https://github.com/MagicCube/homework#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
