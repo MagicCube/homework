@@ -4,7 +4,8 @@ function interpos(arr)
     // one line
     // arr.reduce((prev, cur, idx) => cur ? cur : arr[idx] = prev, arr[0] = arr.find(item => item !== null));
     const firstNonNull = arr.find(item => item);
-    arr.reduce((prev, cur, idx) => {
+    arr.reduce((prev, cur, idx) =>
+    {
         if(cur)
         {
             return cur;
