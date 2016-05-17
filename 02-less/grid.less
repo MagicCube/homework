@@ -3,7 +3,7 @@
 @grid-rows: 12;
 @grid-columns: 16;
 
-.loop-rows-loop-mixin(@counter, @amount) when (@counter > 0)
+.loop-rows-loop-mixin(@counter; @amount) when (@counter > 0)
 {
     .loop-rows-loop-mixin(@counter - 1, @amount);
     .grid > .row-@{counter}
@@ -13,7 +13,7 @@
     }
 }
 
-.loop-cols-loop-mixin(@counter, @amount) when (@counter > 0)
+.loop-cols-loop-mixin(@counter; @amount) when (@counter > 0)
 {
     .loop-cols-loop-mixin(@counter - 1, @amount);
     .grid > .col-@{counter}
@@ -23,5 +23,8 @@
     }
 }
 
-.loop-rows-loop-mixin(@grid-rows, @grid-rows);
-.loop-cols-loop-mixin(@grid-columns, @grid-columns);
+.grid
+{
+    .loop-rows-loop-mixin(@grid-rows; @grid-rows);
+    .loop-cols-loop-mixin(@grid-columns; @grid-columns);    
+}
