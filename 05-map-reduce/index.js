@@ -1,7 +1,7 @@
-const arr = [ null, null, 1, 3, null, 2, null, 1, null, null, 1, null, null ];
+const arr = [ null, null, 1, 3, null, 2, null, 1, null, null, 1, null, null];
 function interpos(arr)
 {
-    arr.forEach((item, idx) => {item === null ? (idx === 0 ? arr[idx] = arr.find(item => item !== null) : arr[idx] = arr[idx - 1]) : null;});
+    arr.reduce((prev, cur, idx) => cur === null ? arr[idx] = arr[idx - 1] : null, arr[0] = arr.find(item => item !== null));
 }
 console.log(arr);
 interpos(arr);
