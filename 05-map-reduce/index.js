@@ -4,11 +4,7 @@ const arr = [ null, null, 2, 3, null, 2, null, 1, null, null, 1, null, null ];
 function interpo(arr) {
 
     let first = null;
-    arr.forEach((item) => {
-        if((first === null) && (item !== null)){
-            first = item;
-        }
-    });
+    first = arr.find((item) => item !== null);
 
     arr.reduce((prev, cur, index) => {
         if(cur === null){
