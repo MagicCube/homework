@@ -1,5 +1,8 @@
 已知有一个数组，其中值只包括 null, 1, 2, 3。
+
+``` javascript
 const arr = [ null, null, 1, 3, null, 2, null, 1, null, null, 1, null, null ];
+```
 
 实现下列函数
 ``` javascript
