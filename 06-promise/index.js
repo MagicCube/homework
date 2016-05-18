@@ -13,7 +13,9 @@ app.get("/api/sum", (req, res, next) => {
     {
         const data = req.query.values.split(" ").map(item => parseInt(item))
                                                 .reduce((prev, cur) => prev + cur );
-        res.send({ sum: data});
+        res.send({
+            sum: data
+        });
     }
 });
 app.post("/api/map", (req, res, next) => {
@@ -25,7 +27,9 @@ app.post("/api/map", (req, res, next) => {
     else
     {
         const data = req.body.map(item => item.num);
-        res.send(data);
+        res.send(
+            data
+        );
     }
 })
 
