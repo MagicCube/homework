@@ -1,0 +1,21 @@
+{
+  "name": "07-gulp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp"
+  ],
+  "author": "Jason",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-less": "^3.1.0",
+    "gulp-rimraf": "^0.2.0",
+    "run-sequence": "^1.2.0"
+  }
+}
