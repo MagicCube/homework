@@ -1,8 +1,8 @@
+const babel = require("gulp-babel");
 const gulp = require("gulp");
 const less = require("gulp-less");
 const rimraf = require("gulp-rimraf");
 const runSequence = require("run-sequence");
-const babel = require("gulp-babel");
 
 const SRC_PATH = "./src";
 const DEST_PATH = "./assets";
@@ -22,8 +22,8 @@ gulp.task("clean", () => {
 });
 
 gulp.task("build-image", () => {
-    return gulp.src([ `${SRC_PATH}/images/*.png`,  `${SRC_PATH}/images/*.jpg` ])
-        .pipe(gulp.dest(`${DEST_PATH}/images`));
+    return gulp.src([ `${SRC_PATH}/res/images/*.png`,  `${SRC_PATH}/res/images/*.jpg` ])
+        .pipe(gulp.dest(`${DEST_PATH}/res/images`));
 });
 
 gulp.task("build-js", () => {
