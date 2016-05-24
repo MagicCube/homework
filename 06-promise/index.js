@@ -14,6 +14,7 @@ app.get("/api/sum", (req, res) => {
         const arr = req.query.values.split(" ").map(item => parseInt(item));
         const sum = arr.reduce((pre, cur) => pre + cur, 0);
         res.send({ sum });
+        
     }
 });
 

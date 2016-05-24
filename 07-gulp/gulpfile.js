@@ -23,13 +23,13 @@ gulp.task("clean", () => {
 
 gulp.task("copyImage", () => {
     return gulp.src(`${SRC_PATH}/res/images/**/*.*`)
-            .pipe(gulp.dest(`${ASSETS_PATH}/res/images`));
+            .pipe(dest(`${ASSETS_PATH}/res/images`));
 });
 
 gulp.task("buildLess", () => {
     return gulp.src(`${SRC_PATH}/res/index.less`)
             .pipe(less())
-            .pipe(gulp.dest(`${ASSETS_PATH}/res/`));
+            .pipe(dest(`${ASSETS_PATH}/res/`));
 });
 
 gulp.task("buildJs", () => {
@@ -37,5 +37,9 @@ gulp.task("buildJs", () => {
             .pipe(babel({
                 "presets": ["es2015"]
             }))
-            .pipe(gulp.dest(`${ASSETS_PATH}`));
+            .pipe(dest(`${ASSETS_PATH}`));
 });
+
+const dest = path => {
+    return gulp.dest(path);
+};

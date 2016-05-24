@@ -15,3 +15,7 @@ function interpo(arr)
 console.log(arr);
 interpo(arr);
 console.log(arr);
+
+let target = null, source1 = {a:1}, source2 = {b:2};
+Object.assign(target, source1 , source2);
+console.log(target);
