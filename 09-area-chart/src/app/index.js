@@ -41,8 +41,6 @@ svg.append("g")
     .attr("transform", `translate(0, ${height})`)
     .call(xAxis)
     .append("text")
-    .attr("x", width)
-    .attr("dx", "-3em")
     .text("Month");
 
 svg.append("g")
