@@ -1,0 +1,50 @@
+{
+  "name": "front-end-scaffold",
+  "version": "1.0.0",
+  "description": "A very simple project which demonstrate how to use the latest front-end technologies together to build a modern website.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "build": "gulp",
+    "dev": "gulp dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MagicCube/front-end-scaffold.git"
+  },
+  "keywords": [
+    "front-end",
+    "scaffold",
+    "gulp",
+    "babel",
+    "es6",
+    "less",
+    "html5"
+  ],
+  "author": "Henry Li <henry1943@163.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MagicCube/front-end-scaffold/issues"
+  },
+  "homepage": "https://github.com/MagicCube/front-end-scaffold#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.9.0",
+    "babelify": "^7.3.0",
+    "d3": "^3.5.17",
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-hash": "^3.1.0",
+    "gulp-less": "^3.1.0",
+    "gulp-rev-replace": "^0.4.3",
+    "gulp-rimraf": "^0.2.0",
+    "gulp-uglify": "^1.5.3",
+    "jquery": "^2.2.3",
+    "jquery.transit": "^0.9.12",
+    "run-sequence": "^1.2.0"
+  },
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
