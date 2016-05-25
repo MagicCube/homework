@@ -55,7 +55,7 @@
         var margin = {
             top: 20,
             right: 30,
-            bottom: 30,
+            bottom: 50,
             left: 50
         };
         var w = 500;
@@ -127,6 +127,19 @@
             .attr("class", "axis")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
             .call(yAxis);
+
+        //给坐标轴加上单位
+        svg.append("text")
+            .attr("x", w)
+            .attr("y", h - 10)
+            .attr("text-anchor", "end")
+            .text("单位：月");
+        svg.append("text")
+            .attr("x", -80)
+            .attr("y", 20)
+            .attr("transform", "rotate(-90)")
+            .text("单位：个");
+
     </script>
 </body>
 </html>
