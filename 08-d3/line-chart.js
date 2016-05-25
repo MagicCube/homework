@@ -1,57 +1,59 @@
-var margin = {
+const margin = {
     top: 20,
     right: 20,
     bottom: 20,
     left: 20
 }
-var width = 900 - margin.left - margin.right,
+const width = 900 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
-var xScale = d3.scale.linear()
+const xScale = d3.scale.linear()
     .range([0, width])
     .domain([0, 12]);
 
-var yScale = d3.scale.linear()
+const yScale = d3.scale.linear()
     .range([height, 0])
     .domain([0, 10]);
 
-var xAxis = d3.svg.axis()
+const xAxis = d3.svg.axis()
     .scale(xScale)
     .orient("bottom");
 
-var yAxis = d3.svg.axis()
+const yAxis = d3.svg.axis()
     .scale(yScale)
     .orient("left");
 
-var line = d3.svg.line()
+const line = d3.svg.line()
     .interpolate("cardinal")
-    .x(function(d) { return xScale(d.month); })
-    .y(function(d) { return yScale(d.value); });
+    .x(d => xScale(d.month))
+    .y(d => yScale(d.value));
 
-var svg = d3.select("body").append("svg")
+const svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-d3.json("data.json", function(error, data) {
-  if (error) throw error;
+d3.json("data.json", (error, data) => {
+    if (error) {
+        console.error(error);
+    }
 
-  svg.append("g")
-      .attr("class", "x axis")
-      .attr("transform", "translate(0," + height + ")")
-      .call(xAxis)
-      .append("text")
-      .attr("x", width)
-      .attr("dx", "-3em")
-      .text("Month");
+    svg.append("g")
+        .attr("class", "x axis")
+        .attr("transform", `translate(0, ${height})`)
+        .call(xAxis)
+        .append("text")
+        .attr("x", width)
+        .attr("dx", "-3em")
+        .text("Month");
 
-  svg.append("g")
-      .attr("class", "y axis")
-      .call(yAxis);
+    svg.append("g")
+        .attr("class", "y axis")
+        .call(yAxis);
 
-  svg.append("path")
-      .datum(data)
-      .attr("class", "line")
-      .attr("d", line);
+    svg.append("path")
+        .datum(data)
+        .attr("class", "line")
+        .attr("d", line);
 });
