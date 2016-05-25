@@ -22,18 +22,18 @@ gulp.task("build", [ "clean" ], (cb) => {
 });
 
 gulp.task("build-less", () => {
-    return gulp.src(`./${SRC_PATH}/**/index.less`)
+    return gulp.src(`${SRC_PATH}/**/index.less`)
             .pipe(less())
             .pipe(gulp.dest(DEST_PATH));
 });
 
 gulp.task("build-img", () => {
-    return gulp.src(`./${SRC_PATH}/**/*.png`)
-            .pipe(gulp.dest(DEST_PATH));
+    return gulp.src(`${SRC_PATH}/res/images/*.png`)
+            .pipe(gulp.dest(`${DEST_PATH}/res/images`));
 });
 
 gulp.task("build-js", () => {
-    return gulp.src(`./${SRC_PATH}/**/*.js`)
+    return gulp.src(`${SRC_PATH}/**/*.js`)
             .pipe(babel({
                 presets: ["es2015"]
             }))
