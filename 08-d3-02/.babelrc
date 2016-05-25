@@ -1,0 +1,4 @@
+{
+    "sourceRoot": "./src",
+    "presets": ["es2015"]
+}
