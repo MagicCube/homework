@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D3 learning</title>
+    <script src="d3/d3.js" charset="utf-8"></script>
+    <style media="screen">
+    			.axis path,
+    			.axis line {
+    				fill: none;
+    				stroke: black;
+    				shape-rendering: geometricPrecision;
+    			}
+
+                path
+                {
+                    stroke-width: 2;
+                    fill: none;
+                }
+
+                .path1 {
+                    stroke: rgba(188, 44, 0, 0.3);
+                }
+
+                .path2 {
+                    stroke: rgba(0, 100, 44, 0.3);
+                }
+
+    			.axis text {
+    				font-family: sans-serif;
+    				font-size: 11px;
+    			}
+
+                .line {
+                    fill: none;
+                    stroke: steelblue;
+                    stroke-width: 1.5px;
+                }
+
+                .area1 {
+                    fill: rgba(188, 44, 0, 0.3);
+                }
+
+                .area2 {
+                    fill: rgba(0, 100, 44, 0.3);
+                }
+
+                .text1 {
+                    fill: red;
+                    font-size: 15px;
+                }
+
+                .text2 {
+                    fill: blue;
+                    font-size: 15px;
+                }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        var data1 = [
+            {
+                "month": 1,
+                "num": 30
+            },
+            {
+                "month": 3,
+                "num": 50
+            },
+            {
+                "month": 8,
+                "num": 70
+            },
+            {
+                "month": 12,
+                "num": 100
+            }
+        ];
+
+        var data2 = [
+            {
+                "month": 1,
+                "num": 70
+            },
+            {
+                "month": 2,
+                "num": 80
+            },
+            {
+                "month": 4,
+                "num": 60
+            },
+            {
+                "month": 6,
+                "num": 55
+            },
+            {
+                "month": 8,
+                "num": 100
+            },
+            {
+                "month": 12,
+                "num": 70
+            }
+        ];
+
+        var margin = {
+            top: 20,
+            right: 30,
+            bottom: 50,
+            left: 50
+        };
+        var w = 500;
+        var h = 500;
+        var mainW = w - margin.left - margin.right;
+        var mainH = h - margin.top - margin.bottom;
+
+        //先创建一个svg
+        var svg = d3.select("body")
+                    .append("svg")
+                    .attr("width", w)
+                    .attr("height", h);
+                    // .append("g")
+                    // .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        //创建比例尺
+        var domain1 = d3.extent(data1, function(d) {
+            return d.num;
+        });
+        var domain2 = d3.extent(data2, function(d) {
+            return d.num;
+        });
+        var min = domain1[0] <= domain2[0] ? domain1[0] : domain2[0];
+        var max = domain1[1] >= domain2[1] ? domain1[1] : domain2[1];
+
+        var xscale = d3.scale.linear()
+                            .domain([0,12])
+                            .range([0, mainW]);
+        var yscale = d3.scale.linear()
+                            .domain([min, max])
+                            .range([mainH, 0]);
+
+        //创建x轴和y轴
+        var xAxis = d3.svg.axis()
+                        .scale(xscale)
+                        .orient("bottom")
+                        .ticks("13");
+        var yAxis = d3.svg.axis()
+                        .scale(yscale)
+                        .orient("left");
+
+        //定义line
+        var area = d3.svg.area()
+            .interpolate("cardinal")
+            .x(function(d) { return xscale(d.month); })
+            .y(function(d) { return yscale(d.num); })
+            .y0(mainH);
+
+        //绑定数据
+        svg.append("path")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+            .attr("d", area.tension(0.4)(data1))
+            .classed("area1", true)
+            .classed("path1", true);
+
+        svg.append("path")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+            .attr("d", area.tension(0.4)(data2))
+            .classed("area2", true)
+            .classed("path2", true);
+
+        svg.selectAll("text.text1")
+            .data(data1)
+            .enter()
+            .append("text")
+            .text(function(d) {
+                console.log(d.num);
+                return d.num;
+            })
+            .classed("text1", true)
+            .attr("x", function(d) {
+                return margin.left + xscale(d.month);
+            })
+            .attr("y", function(d) {
+                return margin.top + yscale(d.num);
+            });
+
+
+
+        svg.selectAll("text.text2")
+            .data(data2)
+            .enter()
+            .append("text")
+            .text(function(d) {
+                console.log(d.num);
+                return d.num;
+            })
+            .classed("text2", true)
+            .attr("x", function(d) {
+                return margin.left + xscale(d.month);
+            })
+            .attr("y", function(d) {
+                return margin.top + yscale(d.num);
+            });
+
+        svg.append("g")
+            .attr("class", "axis")
+            .attr("transform", "translate(" + margin.left + "," + ( h - margin.bottom ) + ")")
+            .call(xAxis);
+        svg.append("g")
+            .attr("class", "axis")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+            .call(yAxis);
+        svg.append("text")
+            .attr("x", w)
+            .attr("y", h - 10)
+            .attr("text-anchor", "end")
+            .text("单位：月");
+        svg.append("text")
+            .attr("x", -80)
+            .attr("y", 20)
+            .attr("transform", "rotate(-90)")
+            .text("单位：个");
+    </script>
+</body>
+</html>
