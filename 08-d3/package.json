@@ -1,0 +1,18 @@
+{
+  "name": "2d-chart",
+  "version": "1.0.0",
+  "description": "生成2维的曲线图，x轴为月份，y轴为1~10的值；<br>",
+  "main": "line-chart.js",
+  "scripts": {
+    "start": "anywhere",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "d3"
+  ],
+  "author": "yang",
+  "license": "MIT",
+  "devDependencies": {
+    "d3": "^3.5.17"
+  }
+}

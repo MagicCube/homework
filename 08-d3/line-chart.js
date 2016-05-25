@@ -24,6 +24,7 @@ var yAxis = d3.svg.axis()
     .orient("left");
 
 var line = d3.svg.line()
+    .interpolate("cardinal")
     .x(function(d) { return xScale(d.month); })
     .y(function(d) { return yScale(d.value); });
 
