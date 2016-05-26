@@ -58,10 +58,7 @@ gulp.task("build-js", () => {
     }
     else
     {
-        return chain.pipe(babel({
-                    presets: [ "es2015" ]
-                    }))
-                    .pipe(uglify())
+        return chain.pipe(uglify())
                     .pipe(hash())
                     .pipe(gulp.dest(`${ASSETS_PATH}/app`))
                     .pipe(hash.manifest("manifest.json", true))
