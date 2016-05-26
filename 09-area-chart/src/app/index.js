@@ -1,5 +1,3 @@
-const d3 = require("d3");
-
 const width = 960, height = 600;
 const margin = {
     left: 30,
