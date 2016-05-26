@@ -75,3 +75,8 @@ svg.append("path")
        class : "area svg-blue",
        d : area
    });
+
+d3.select("p")
+    .on("click", () => {
+        alert("dsadsa");
+    });
