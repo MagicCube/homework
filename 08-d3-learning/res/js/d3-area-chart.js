@@ -72,11 +72,41 @@ svg.append("g")
 svg.append("path")
    .datum(data)
    .attr({
+       id : "path-data",
        class : "area svg-blue",
        d : area
    });
 
 d3.select("p")
     .on("click", () => {
-        alert("dsadsa");
+
+
+        svg.select("#path-data")
+           .datum(createData())
+           .transition()
+           .delay(500)
+           .duration(1000)
+           .attr({
+               id : "path-data",
+               class : "area svg-blue",
+               d : area,
+           });
     });
+
+function createColor()
+{
+
+}
+
+function createData()
+{
+    let arry = [];
+    for(let i = 1; i < 13; i++){
+        let value = Math.random() * 100;
+        arry.push({
+            month : i,
+            value : value
+        });
+    }
+    return arry;
+}
